@@ -8,11 +8,15 @@ print(1234)
 
 # Aspas simples
 print('Arnaldo Leão')
+'''Forma mais adequada de exibir áspas 
+simples no texto'''
+
+print("seu nome é: 'Arnaldo Leão'")
 
 '''forma mais adequada de imprimri áspas duplas
 no texto.
 '''
-print('Seu nome é "Arnaldo Leão"')
+print('Seu nome é: "Arnaldo Leão"')
 
 
 # Aspas duplas
