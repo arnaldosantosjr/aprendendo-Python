@@ -20,3 +20,4 @@ minha_lista = [1,3,5,7,9]
 
 print (pesquisa_binaria(minha_lista, 3)) # => 1
 print (pesquisa_binaria(minha_lista,-1)) # => None
+
