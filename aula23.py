@@ -19,5 +19,6 @@ else:
 if senha != '123456':
     print('Senha incorreta!')
 '''
+# inverte a expressão 
 if not senha:
     print('preencha o campo da senha!')

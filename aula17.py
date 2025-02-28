@@ -16,8 +16,9 @@ elif condicao3:
 else:
     print('Condição 4')
 
-
+'''
 if 10 == 10:
     print('Outro if')
 
 print('Fora do if')
+'''
