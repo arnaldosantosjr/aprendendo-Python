@@ -53,3 +53,4 @@ try:
 
 except ValueError:
     print('Erro: Insira valores válidos para peso e altura')
+    
