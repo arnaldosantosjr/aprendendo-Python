@@ -5,10 +5,12 @@ while True:
     oper = input('Digite o operador (+ - / *): ')
 
     numeros_validos = None
+    num1_float = 0
+    num2_float = 0
 
     try:
         num1_float = float(num1)
-        mum2_float = float(num2)
+        num2_float = float(num2)
         numeros_validos = True
     except:
         numeros_validos = None
@@ -25,6 +27,21 @@ while True:
     if len(oper) >1:
         print('Digite apenas um operador.')
         continue
+    print('Realizando a sua conta')
+    if oper =='+':
+        print(f'{num1_float + num2_float} = ', num1_float + num2_float)
+
+    elif oper =='-':
+        print(f'{num1_float - num2_float} = ', num1_float - num2_float)
+
+    elif oper =='/':
+        print(f'{num1_float / num2_float} = ', num1_float / num2_float)
+
+    elif oper =='*':
+        print(f'{num1_float * num2_float} = ', num1_float * num2_float)
+
+    else:
+        print('Não deveria chegar aqui!')
 
     sair = input('Que sair [S]im: ').lower().startswith('s')
     
