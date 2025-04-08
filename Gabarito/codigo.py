@@ -24,7 +24,8 @@ time.sleep(3)
 
 #========================================================================='
 # Passo 2:fazer login
-pyautogui.click(x=571, y=378)
+pyautogui.press("tab")
+pyautogui.click(x=763, y=396)
 time.sleep(3)
 #pyautogui.click(x=766, y=385)
 pyautogui.write("testenaldex@gmail.com")
@@ -44,19 +45,36 @@ print(tabela)
 
 # PAsso 4: Cadastrar 1 produto
 #time.sleep(3)
-pyautogui.click(x=436, y=256)
+pyautogui.click(x=684, y=280)
 
 codigo = "MOLO000251"
 pyautogui.write(codigo)
 
-
+pyautogui.press("tab")
 marca = "Logitech"
+pyautogui.write(marca)
+pyautogui.press("tab")
 tipo = "Mouse"
+pyautogui.write(tipo)
+pyautogui.press("tab")
 categoria = "1"
+pyautogui.write(categoria)
+pyautogui.press("tab")
 preco_unitario = "25.95"
+pyautogui.write(preco_unitario)
+pyautogui.press("tab")
 custo = "6.50"
+pyautogui.write(custo)
+pyautogui.press("tab")
 obs = ""
+pyautogui.write(obs)
+pyautogui.press("tab")
+pyautogui.press("enter")
 
+
+
+
+pyautogui.scroll(100000)
 # Passo 5: Repetir para todos os produtos
 
 # pyautogui -> automatizações em python 
