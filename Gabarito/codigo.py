@@ -1,4 +1,4 @@
-import pyautogui
+import pyautogui 
 pyautogui.PAUSE = 0.4 #Definindo o tempo de espera entre as acções
 import time # controle de tempo
 
@@ -10,7 +10,7 @@ import time # controle de tempo
 # Passo 1: Enttrar no sistema da empresa - https://dlp.hashtagtreinamentos.com/python/intensivao/login
 # abrir o navegador
 pyautogui.press("win")
-pyautogui.write("firefox")
+pyautogui.write("edge")
 pyautogui.press("enter")
 
 #digitar o sitepythonimpresssionador@gmail.com 
@@ -43,8 +43,19 @@ tabela = pandas.read_csv("produtos.csv") # ler a base de dados
 print(tabela)
 
 # PAsso 4: Cadastrar 1 produto
-time.sleep(3)
-pyautogui.click(x=454, y=256)
+#time.sleep(3)
+pyautogui.click(x=436, y=256)
+
+codigo = "MOLO000251"
+pyautogui.write(codigo)
+
+
+marca = "Logitech"
+tipo = "Mouse"
+categoria = "1"
+preco_unitario = "25.95"
+custo = "6.50"
+obs = ""
 
 # Passo 5: Repetir para todos os produtos
 
