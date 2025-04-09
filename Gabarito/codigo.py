@@ -45,36 +45,41 @@ print(tabela)
 
 # PAsso 4: Cadastrar 1 produto
 #time.sleep(3)
-pyautogui.click(x=684, y=280)
+for linha in tabela.index: #Percorre as linhas da tabela
+    pyautogui.click(x=684, y=280)
 
-codigo = "MOLO000251"
-pyautogui.write(codigo)
+    codigo = str(tabela.loc[linha,"codigo"]) #'transformando em string
+    pyautogui.write(codigo)
 
-pyautogui.press("tab")
-marca = "Logitech"
-pyautogui.write(marca)
-pyautogui.press("tab")
-tipo = "Mouse"
-pyautogui.write(tipo)
-pyautogui.press("tab")
-categoria = "1"
-pyautogui.write(categoria)
-pyautogui.press("tab")
-preco_unitario = "25.95"
-pyautogui.write(preco_unitario)
-pyautogui.press("tab")
-custo = "6.50"
-pyautogui.write(custo)
-pyautogui.press("tab")
-obs = ""
-pyautogui.write(obs)
-pyautogui.press("tab")
-pyautogui.press("enter")
-
-
-
+    pyautogui.press("tab") #passo para o proximo campo
+    marca = str(tabela.loc[linha,"marca"])
+    pyautogui.write(marca)
+    pyautogui.press("tab")
+    tipo = str(tabela.loc[linha,"tipo"])
+    pyautogui.write(tipo)
+    pyautogui.press("tab")
+    categoria = str(tabela.loc[linha,"categoria"])   
+    pyautogui.write(categoria)
+    pyautogui.press("tab")
+    preco_unitario = str(tabela.loc[linha,"preco_unitario"]) #trasformando em string
+    pyautogui.write(preco_unitario)
+    pyautogui.press("tab")
+    custo = str(tabela.loc[linha,"custo"])
+    pyautogui.write(custo)
+    pyautogui.press("tab")
+    obs = str(tabela.loc[linha,"obs"])
+    if obs != "nan":
+        pyautogui.write(obs)
+        
+    pyautogui.write(obs)
+    pyautogui.press("tab")
+    pyautogui.press("enter")
 
 pyautogui.scroll(100000)
 # Passo 5: Repetir para todos os produtos
+ 
+ 
+
+
 
 # pyautogui -> automatizações em python 
