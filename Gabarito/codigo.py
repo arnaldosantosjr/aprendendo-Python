@@ -70,16 +70,11 @@ for linha in tabela.index: #Percorre as linhas da tabela
     obs = str(tabela.loc[linha,"obs"])
     if obs != "nan":
         pyautogui.write(obs)
-        
+
     pyautogui.write(obs)
     pyautogui.press("tab")
     pyautogui.press("enter")
 
 pyautogui.scroll(100000)
 # Passo 5: Repetir para todos os produtos
- 
- 
-
-
-
 # pyautogui -> automatizações em python 
