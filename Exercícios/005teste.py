@@ -1,7 +1,7 @@
-'''
-Este projeto é uma calculadora de imc mais precisa
-Ela calcula o imc também de acordo com o gênero do usuário
-'''
+
+# Este projeto é uma calculadora de imc mais precisa
+# Ela calcula o imc também de acordo com o gênero do usuário
+
 while True:
     genero = input('Qual o seu gênero?\nDigite [H]omem ou [M]ulher:\n').strip().lower()
     if genero in ['h', 'm']:
