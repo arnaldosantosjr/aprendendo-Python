@@ -6,6 +6,11 @@
 #      append, insert, pop, del, clear, extend, +
 # Crate REand Update   Delete
 # Criar, ler, alterar, apagar = lista[1] (CRUD)
+# del - remove o elemento da lista
+# pop - Remove o final ou o indice escolhido
+# clear - Limpa a lista
+# extend - Estende a lista
+# + - Concatena duas listas
 
 
 #         0  1  2  3  
@@ -23,4 +28,6 @@ lista.append(60) # Adiciona o valor 60 ao final da lista
 lista.append(70) # Adiciona o valor 70 ao final da lista
 lista.pop()
 ultimo_valor = lista.pop(3)
+del lista[0] # Remove o elemento do índice 0 da listaina
+lista.insert(0, 'Arnaldo') # Adiciona o valor 'Arnaldo' no índice 0 da lista
 print(lista, 'Removido', ultimo_valor) # Exibe a lista após adicionar os elementos
