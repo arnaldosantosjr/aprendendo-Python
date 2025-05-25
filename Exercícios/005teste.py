@@ -1,51 +1,76 @@
+import tkinter as tk
+from tkinter import messagebox
 
-# Este projeto é uma calculadora de imc mais precisa
-# Ela calcula o imc também de acordo com o gênero do usuário
-
-while True:
-    genero = input('Qual o seu gênero?\nDigite [H]omem ou [M]ulher:\n').strip().lower()
-    if genero in ['h', 'm']:
-        break
-    else:
-        print('Gênero inválido')
-
-nome = input('Qual o seu nome?\n').strip()
-
-while True:
+def calcular_imc():
     try:
-        peso = float(input('Qual o seu peso em Kg?\n').strip())
-        altura = float(input('Digite sua altura em m.\n').strip())
-        if peso > 0 and altura > 0:
-            imc = peso / (altura ** 2)
-            print(f'{nome}, o seu imc é:{imc:.2f}')
-            break
+        nome = entry_nome.get().strip()
+        genero = var_genero.get()
+        peso = float(entry_peso.get().strip())
+        altura = float(entry_altura.get().strip())
+
+        if peso <= 0 or altura <= 0:
+            raise ValueError("Peso e altura devem ser maiores que zero.")
+
+        imc = peso / (altura ** 2)
+        resultado = f"{nome}, o seu IMC é: {imc:.2f}\n"
+
+        if genero == "h":
+            if imc < 20:
+                resultado += "Você está abaixo do peso normal"
+            elif imc < 24.9:
+                resultado += "Você está no peso ideal"
+            elif imc < 29.9:
+                resultado += "Você está com obesidade leve"
+            elif imc < 39.9:
+                resultado += "Você está com obesidade moderada"
+            else:
+                resultado += "Você está com obesidade mórbida"
+        elif genero == "m":
+            if imc < 19:
+                resultado += "Você está abaixo do peso normal"
+            elif imc < 23.9:
+                resultado += "Você está no peso ideal"
+            elif imc < 28.9:
+                resultado += "Você está com obesidade leve"
+            elif imc < 38.9:
+                resultado += "Você está com obesidade moderada"
+            else:
+                resultado += "Você está com obesidade mórbida"
         else:
-            print('Peso e altura devem ser maiores que zero')
+            resultado = "Selecione um gênero válido."
+
+        messagebox.showinfo("Resultado", resultado)
+
     except ValueError:
-        print('Erro: Insira valores válidos para peso e altura')
+        messagebox.showerror("Erro", "Insira valores válidos para peso e altura.")
 
+# Janela principal
+janela = tk.Tk()
+janela.title("Calculadora de IMC")
 
-if genero == 'h': 
-    if imc < 20:
-        print(f'{nome}, você está abaixo do peso normal')
-    elif imc >=20 and imc < 24.9:
-        print(f'{nome}, você está no peso ideal.')
-    elif imc >=24.9 and imc < 29.9:
-        print(f'{nome}, você está com obesidae leve.')
-    elif imc >= 29.9 and imc <39.9:
-        print(f'{nome}, você está com obesidade moderada')
-    else:
-        print(f'{nome} você está com obesidade mórbida.')
-    
-elif genero == 'm':
-    
-    if imc < 19:
-        print(f'{nome}, você está abaixo do peso normal')
-    elif imc >=19 and imc <23.9:
-        print(f'{nome}, você está no peso ideal.')
-    elif imc >= 23.9 and imc <28.9:
-        print(f'{nome}, você está com obesidade leve.')
-    elif imc >= 28.9 and imc <38.9:
-        print(f'{nome}, você está com obesidade moderada')
-    else: 
-        print(f'{nome} você está com obesidade mórbida.')
+# Nome
+tk.Label(janela, text="Nome:").grid(row=0, column=0)
+entry_nome = tk.Entry(janela)
+entry_nome.grid(row=0, column=1)
+
+# Gênero
+tk.Label(janela, text="Gênero:").grid(row=1, column=0)
+var_genero = tk.StringVar(value="h")
+tk.Radiobutton(janela, text="Homem", variable=var_genero, value="h").grid(row=1, column=1, sticky="w")
+tk.Radiobutton(janela, text="Mulher", variable=var_genero, value="m").grid(row=1, column=2, sticky="w")
+
+# Peso
+tk.Label(janela, text="Peso (kg):").grid(row=2, column=0)
+entry_peso = tk.Entry(janela)
+entry_peso.grid(row=2, column=1)
+
+# Altura
+tk.Label(janela, text="Altura (m):").grid(row=3, column=0)
+entry_altura = tk.Entry(janela)
+entry_altura.grid(row=3, column=1)
+
+# Botão calcular
+botao = tk.Button(janela, text="Calcular IMC", command=calcular_imc)
+botao.grid(row=4, column=0, columnspan=2, pady=10)
+
+janela.mainloop()

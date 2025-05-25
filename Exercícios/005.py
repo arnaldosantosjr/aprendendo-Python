@@ -2,6 +2,8 @@
 Este projeto é uma calculadora de imc mais precisa
 Ela calcula o imc também de acordo com o gênero do usuário
 '''
+import tkinter as tk
+from tkinter import messagebox
 while True:
     genero = input('Qual o seu gênero?\nDigite [H]omem ou [M]ulher:\n').strip().lower() #stripe verifica se há espaço e lower ajusta para que não haja problemas entre letras maiúsculas e minúsculas
     if not genero or genero not in ['h', 'm']:
