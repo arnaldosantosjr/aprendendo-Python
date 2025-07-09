@@ -6,7 +6,7 @@ class FlatCalculator(ctk.CTk):
 
         self.title("Calculadora Flat")
         self.geometry("300x400")
-        ctk.set_appearance_mode("light")  # ou "darck"
+        ctk.set_appearance_mode("light")  # ou "dark"
         ctk.set_default_color_theme("dark-blue")
 
         self.expression = ""
