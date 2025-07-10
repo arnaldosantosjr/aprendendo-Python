@@ -30,5 +30,16 @@ try:
             else:
                 linhas.append(linha_atual.strip())
                 linha_atual = palavra
-        
-     
+        linhas.append(linha_atual.strip()) # Adiciona uma última linha construida após o loop das palavras
+
+
+        for linha in linhas:
+            if y_pod <50:
+                c.showPage()
+                y_pos = altura - 50
+            c.drawString(50, y_pos, linha)
+            y_pos -= 14
+    
+    c.save() # Salva o arquivo PDF gerado no caminho específicado.
+    print("Documento '{os.paht.basename(caminho_doc)}' convertido para '{os.paht.basename(caminho_pdf)}'com sucesso.")
+    return True
